@@ -12,18 +12,13 @@ from PIL import Image
 from six.moves import range
 
 import keras.backend as K
-from keras.datasets import mnist
 
 from keras.utils.generic_utils import Progbar
 import numpy as np
-from keras.datasets import cifar10, cifar100  #10
 import keras
 
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-
-from DVGG16QG1024L4Mini4_model import build_generator, build_discriminator
-#from DQGQ_model import build_generator, build_discriminator
 
 from keras.preprocessing import image
 import sys
