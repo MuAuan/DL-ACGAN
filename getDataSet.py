@@ -37,7 +37,7 @@ K.set_image_data_format('channels_first')
 
 #その１　------データセット作成------
 
-#フォルダは整数で名前が付いています。
+#フォルダは"train_images整数"で名前が付いています。
 def getDataSet(img_rows,img_cols):
     #リストの作成
     X_train = []
@@ -48,11 +48,11 @@ def getDataSet(img_rows,img_cols):
     for i in range(0,9):
         path = "./train_images"
         if i == 0:
-            #othersは15000枚用意します。テスト用には3000枚
+            #480枚用意します。テスト用には40枚
             cutNum = 480
             cutNum2 = 440
         else:
-            #主要キャラたちは1800枚ずつ。テスト用には300枚
+            #主要キャラたちは480枚ずつ。テスト用には40枚
             cutNum = 480
             cutNum2 = 440
         imgList = os.listdir(path+str(i))
@@ -62,8 +62,8 @@ def getDataSet(img_rows,img_cols):
             #imgSrc = cv2.imread(path+str(i)+"/"+imgList[j])
             img = image.load_img(path+str(i)+"/"+imgList[j], target_size=(img_rows,img_cols))
             imgSrc = image.img_to_array(img)
-            #imreadはゴミを吸い込んでも、エラーで止まらずNoneを返してくれます。
-            #ですので読み込み結果がNoneでしたらスキップしてもらいます。
+            #target_size=(img_rows,img_cols)
+            
             if imgSrc is None:continue
             if j < cutNum2:
                 X_train.append(imgSrc)
