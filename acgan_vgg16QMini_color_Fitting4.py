@@ -20,6 +20,7 @@ Hardware           | Backend | Time / Epoch
 Consult https://github.com/lukedeo/keras-acgan for more information and
 example output
 """
+
 from __future__ import print_function
 
 from collections import defaultdict
